@@ -36,7 +36,7 @@ app.post("/create", (req, res) => {
     .save()
     .then((data) => {
       console.log(data);
-      res.send("posted");
+      res.send(data);
     })
     .catch((err) => {
       console.log(err);
@@ -47,7 +47,7 @@ app.post("/delete", (req, res) => {
   Contact.findByIdAndRemove(req.body.id)
     .then((data) => {
       console.log("deleted", data);
-      res.send("deleted");
+      res.send(data);
     })
     .catch((err) => {
       console.log(err);
@@ -71,7 +71,7 @@ app.post("/update", (req, res) => {
   )
     .then((data) => {
       console.log("updated", data);
-      res.send("updated");
+      res.send(data);
     })
     .catch((err) => {
       console.log(err);
